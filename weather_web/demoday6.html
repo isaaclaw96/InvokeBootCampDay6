@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{margin: 0; padding:0;}
+            #container {
+                width: 900px;
+                height: 500px;
+                background-color: lightgreen;
+                margin: 0 auto;
+                font-family: sans-serif;
+            }
+            h1 {
+                font-size: 50;
+            }
+            @media (max-width:400px){
+                #container {
+                    background-color: red;
+                }
+            }
+            @media (min-width:500px) and (max-width:700px) {
+                #container {
+                    background-color: yellow;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h1>This is a weather web</h1>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,106 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+:root {
+    --title-font-size:22px;
+    --subtitle-font-size:18px;
+    --day-font-size:16px;
+
+    --primary-color:#333333;
+    --secondary-color:#848484;
+}
+html,body {
+    font-family: sans-serif;
+    color: var(--primary-color);
+}
+#app {
+    padding: 0.75em;
+    min-width: 350px;
+}
+header h1, header p {
+    margin-bottom: 10px;
+}
+span, .gray-text {
+    color: var(--secondary-color);
+}
+#weather-holder, #temp-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+/* #temp-holder h2::before {
+    content:"before";
+} */
+#temp-holder h2::after {
+    content: "\2109";
+    color: var(--secondary-color);
+    font-size: 12px;
+    margin-left:5px;
+    vertical-align: top;
+}
+#weather-holder ul {
+    list-style-type: none;
+}
+#weather-holder ul li {
+    margin: 5px 0;
+}
+.day-weather {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--primary-color);
+    animation-name: moveDay;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.day-weather:nth-child(1) {
+    animation-delay: 0.3s;
+}
+@keyframes moveDay {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.day-weather h4 {
+    min-width: 100px; /*min-width to set a fixed width of the object*/
+}
+.degree-holder p::after {
+    content: "\00B0";
+}
+
+@media (min-width:650px) {
+    .degree-holder {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .degree-holder p {
+        margin: 0 15px;
+    }
+}
+
+@media (min-width:650px) {
+    header {
+        max-width: 650px;
+    }
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        /* max-width: 1000px; */
+    }
+    .day-weather {
+        border: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
